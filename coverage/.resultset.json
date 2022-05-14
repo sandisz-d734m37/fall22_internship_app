@@ -30,6 +30,14 @@
           null
         ]
       },
+      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/models/shipment.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -77,6 +85,6 @@
         }
       }
     },
-    "timestamp": 1652571191
+    "timestamp": 1652571247
   }
 }
