@@ -12,6 +12,16 @@
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
           null
         ]
       },
@@ -64,6 +74,17 @@
         "branches": {
         }
       },
+      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/items_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -85,6 +106,6 @@
         }
       }
     },
-    "timestamp": 1652571247
+    "timestamp": 1652572671
   }
 }
