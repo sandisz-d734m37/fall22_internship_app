@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe ShipmentItem do
-  context "validations" do
-    it{should have_many(:items)}
-    it{should have_many(:shipments)}
+  context "relationships" do
+    it{should belong_to(:item)}
+    it{should belong_to(:shipment)}
   end
 end
