@@ -12,14 +12,11 @@ describe "item index page" do
   it "displays a list of items" do
     expect(page).to have_content("Item 1")
     expect(page).to have_content("Price: 10.00")
-    expect(page).to have_content("Description: The first item")
 
     expect(page).to have_content("Item 2")
     expect(page).to have_content("Price: 20.00")
-    expect(page).to have_content("Description: The second item")
 
     expect(page).to have_content("Item 3")
     expect(page).to have_content("Price: 30.00")
-    expect(page).to have_content("Description: The third item")
   end
 end
