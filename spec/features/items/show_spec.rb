@@ -5,7 +5,7 @@ describe "item show page" do
     @item1 = Item.create!(name: "Item 1", price: 1000, description: "The first item", inventory:10)
     @item2 = Item.create!(name: "Item 2", price: 2000, description: "The second item", inventory:20)
 
-    @item1_shipment_outgoing_1 = Shipment.create!(origin: "123 Real Corp Street", destination: "123 Fake St", outgoing: true, arrived: true, created_at: Date.parse("2022-01-01"), updated_at: Date.parse("2022-01-08"))
+    @item1_shipment_outgoing_1 = Shipment.create!(origin: "123 Real Corp Street", destination: "123 Fake St", outgoing: true, arrived: true, created_at: Date.parse("2022-01-08"), updated_at: Date.parse("2022-01-09"))
     @i1_outgoing_1_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_outgoing_1.id, quantity: 1)
 
     @item1_shipment_outgoing_2 = Shipment.create!(origin: "123 Real Corp Street", destination: "123 Fake St", outgoing: true, arrived: true, created_at: Date.parse("2022-01-01"), updated_at: Date.parse("2022-01-01"))
@@ -42,11 +42,13 @@ describe "item show page" do
   it "displays the latest shipment dates for this item" do
     within("#latest-incoming") do
       expect(page).to have_content("Latest incoming shipment: 01/01/2022")
+
       expect(page).not_to have_content("Latest incoming shipment: 01/08/2022")
     end
 
     within("#latest-outgoing") do
       expect(page).to have_content("Latest outgoing shipment: 01/08/2022")
+      
       expect(page).not_to have_content("Latest outgoing shipment: 01/01/2022")
     end
   end

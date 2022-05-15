@@ -14,7 +14,7 @@ class Item < ApplicationRecord
 
   def latest_incoming_date
     date = shipments
-    .where("arrived = ?", true)
+    .where("arrived = ? AND outgoing = ?", true, false)
     .order(updated_at: :desc)
     .first
     .updated_at

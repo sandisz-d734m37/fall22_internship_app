@@ -17,6 +17,11 @@ describe Item do
     @item1_shipment_incoming_2 = Shipment.create!(origin: "123 Fake St", destination: "123 Real Corp Street", outgoing: false, arrived: true, created_at: Date.parse("2022-01-01"), updated_at: Date.parse("2022-01-01"))
     @i1_incoming_2_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_incoming_2.id, quantity: 1)
 
+    @item1_shipment_outgoing_1 = Shipment.create!(origin: "123 Real Corp Street", destination: "123 Fake St", outgoing: true, arrived: true, created_at: Date.parse("2022-01-08"), updated_at: Date.parse("2022-01-09"))
+    @i1_outgoing_1_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_outgoing_1.id, quantity: 1)
+
+    @item1_shipment_outgoing_2 = Shipment.create!(origin: "123 Real Corp Street", destination: "123 Fake St", outgoing: true, arrived: true, created_at: Date.parse("2022-01-01"), updated_at: Date.parse("2022-01-09"))
+    @i1_outgoing_2_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_outgoing_2.id, quantity: 1)
   end
 
   describe "instance methods" do
@@ -31,7 +36,16 @@ describe Item do
     context "#latest_incoming_date" do
       it "finds the items latest incoming shipment that has arrived" do
         expect(@item1.latest_incoming_date).to eq("01/01/2022")
+
         expect(@item1.latest_incoming_date).not_to eq("01/08/2022")
+      end
+    end
+
+    context "#latest_outgoing_date" do
+      it "finds the items latest outging shipment based on creation date (not updated date)" do
+        expect(@item1.latest_outgoing_date).to eq("01/08/2022")
+
+        expect(@item1.latest_outgoing_date).not_to eq("01/09/2022")
       end
     end
   end
