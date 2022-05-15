@@ -11,4 +11,8 @@ class Item < ApplicationRecord
     price_to_convert = price / 100.0
     helper.number_to_currency(price_to_convert)
   end
+
+  def self.alphabetize
+    all.order(:name)
+  end
 end

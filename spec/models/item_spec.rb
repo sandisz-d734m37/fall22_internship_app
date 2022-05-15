@@ -25,7 +25,7 @@ describe Item do
   describe "Class methods" do
     context "#alphabetize" do
       it "alphabetizes all the items" do
-        expect(Item.aplhabetize).to eq([@item3, @item1, @item2])
+        expect(Item.alphabetize).to eq([@item3, @item1, @item2])
       end
     end
   end
