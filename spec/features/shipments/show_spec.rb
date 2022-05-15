@@ -4,6 +4,7 @@ describe "Shipment show page" do
   before do
     @item1 = Item.create!(name: "Item 1", price: 1000, description: "The first item", inventory:10)
     @item2 = Item.create!(name: "Item 2", price: 2000, description: "The second item", inventory:20)
+    @item3 = Item.create!(name: "Item 3", price: 3000, description: "The third item", inventory:30)
 
     @item1_shipment_outgoing_1 = Shipment.create!(origin: "123 Real Corp Street", destination: "123 Fake St", outgoing: true, arrived: true, created_at: Date.parse("2022-01-08"), updated_at: Date.parse("2022-01-09"))
     @i1_outgoing_1_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_outgoing_1.id, quantity: 1)
@@ -21,7 +22,7 @@ describe "Shipment show page" do
     @i2_outgoing_shipment_item = ShipmentItem.create!(item_id: @item2.id, shipment_id: @item2_shipment_outgoing.id, quantity: 1)
 
     @both_items_shipment = Shipment.create!(origin: "123 Real Corp Street", destination: "123 Fake St", outgoing: true, arrived: true, created_at: Date.parse("2021-11-01"), updated_at: Date.parse("2021-12-01"))
-    @i1_outgoing_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @both_items_shipment.id, quantity: 1)
+    @i1_outgoing_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @both_items_shipment.id, quantity: 3)
     @i2_outgoing_shipment_item = ShipmentItem.create!(item_id: @item2.id, shipment_id: @both_items_shipment.id, quantity: 1)
 
 
@@ -40,5 +41,26 @@ describe "Shipment show page" do
 
     expect(page).not_to have_content("Incoming")
     expect(page).not_to have_content("Still en route")
+  end
+
+  it "displays item information" do
+    within("#items") do
+      expect(page).to have_link("Item 1")
+      expect(page).to have_link("Item 2")
+
+      expect(page).not_to have_link("Item 3")
+    end
+
+    within("#item-#{@item1.id}") do
+      expect(page).to have_content("Quantity: 3")
+      expect(page).to have_content("Unit Price: $10.00")
+      expect(page).to have_content("Total Item Price: $30.00")
+    end
+
+    within("#item-#{@item2.id}") do
+      expect(page).to have_content("Quantity: 1")
+      expect(page).to have_content("Unit Price: $20.00")
+      expect(page).to have_content("Total Item Price: $20.00")
+    end
   end
 end
