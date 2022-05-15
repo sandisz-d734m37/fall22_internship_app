@@ -22,6 +22,16 @@ class Item < ApplicationRecord
     date.strftime("%m/%d/%Y")
   end
 
+  def latest_outgoing_date
+    date = shipments
+    .where("outgoing = ?", true)
+    .order(created_at: :desc)
+    .first
+    .created_at
+
+    date.strftime("%m/%d/%Y")
+  end
+
   def self.alphabetize
     all.order(:name)
   end
