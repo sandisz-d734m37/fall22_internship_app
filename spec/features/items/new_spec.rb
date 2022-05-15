@@ -26,6 +26,17 @@ describe "New Item page" do
 
     click_button "Create Item"
 
+    expect(current_path).to eq("/items/new")
     expect(page).to have_content("The name field cannot be blank")
+  end
+
+  it "Sets price and inventory to 0 if the field is left blank" do
+    fill_in "Name", with: "Test item"
+
+    click_button "Create Item"
+
+    expect(page).to have_content("Test item")
+    expect(page).to have_content("Price: $0.00")
+    expect(page).to have_content("Inventory: 0")
   end
 end
