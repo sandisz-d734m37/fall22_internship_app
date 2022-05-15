@@ -8,10 +8,11 @@
 
 <p>Created: <%= @shipment.format_created_date %></p>
 <p>Last updated: <%= @shipment.format_updated_date %></p>
+<hr>
 
 <div id="items">
+  <h2>Items on this shipment:</h2>
   <ul>
-
     <% @shipment.items.each do |item| %>
       <li id="item-<%= item.id %>">
         <h3><a href="/items/<%= item.id %>"><%= item.name %></a></h3>
@@ -19,6 +20,13 @@
         <p>Unit Price: <%= item.formatted_price %> </p>
         <p>Total Item Price: <%= item.total_in_shipment(@shipment) %> </p>
       </li>
+      <hr>
     <% end %>
   </ul>
+  <br>
+</div>
+
+<div id="totals">
+  <h3>Total items: <%= @shipment.item_count %></h3>
+  <h2>Total cost: <%= @shipment.total %></h2>
 </div>
