@@ -58,4 +58,18 @@ describe "Shipment index page" do
       expect(current_path).to eq("/shipments/#{@item1_shipment_outgoing_1.id}")
     end
   end
+
+  it "shows shipment status" do
+    within("#shipment-#{@item1_shipment_outgoing_1.id}") do
+      expect(page).to have_content("Arrived")
+
+      expect(page).not_to have_content("Still en route")
+    end
+
+    within("#shipment-#{@item1_shipment_incoming_1.id}") do
+      expect(page).to have_content("Still en route")
+
+      expect(page).not_to have_content("Arrived")
+    end
+  end
 end
