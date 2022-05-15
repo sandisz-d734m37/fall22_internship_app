@@ -28,4 +28,11 @@ describe "item index page" do
     expect("A Item 3").to appear_before("B Item 1")
     expect("B Item 1").to appear_before("C Item 2")
   end
+
+  it "includes links to item show pages" do
+    within("#item-#{@item1.id}") do
+      click_link("B Item 1")
+      expect(current_path).to eq("/items/#{@item1.id}")
+    end
+  end
 end
