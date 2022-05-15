@@ -49,6 +49,12 @@ describe Item do
         expect(@item1.latest_outgoing_date).not_to eq("01/10/2022")
       end
     end
+
+    context "#ordered_shipments" do
+      it "sorts all item shipments by updated_at" do
+        expect(@item1.ordered_shipments).to eq([@item1_shipment_outgoing_2, @item1_shipment_outgoing_1, @item1_shipment_incoming_1, @item1_shipment_incoming_2])
+      end
+    end
   end
 
   describe "Class methods" do

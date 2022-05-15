@@ -11,3 +11,13 @@
 <div id="latest-outgoing">
   <p>Latest outgoing shipment: <%= @item.latest_outgoing_date %></p>
 </div>
+
+<div id="all-shipments">
+  <ul>
+    <% @item.ordered_shipments.each do |shipment| %>
+      <li>
+        <h3>Shipment #<%= shipment.id %></h3>
+        <p><%= shipment.in_or_out %></p>
+      </li>
+  </ul>
+</div>
