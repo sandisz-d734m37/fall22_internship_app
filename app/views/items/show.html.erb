@@ -3,3 +3,11 @@
   <h3>Price: <%= @item.formatted_price %></h3>
   <h3>Inventory: <%= @item.inventory %></h3>
 </div>
+
+<div id="latest-incoming">
+  <p>Latest incoming shipment: <%= @item.latest_incoming_date %></p>
+</div>
+
+<div id="latest-outgoing">
+  <p>Latest incoming shipment: <%= @item.latest_outgoing_date %></p>
+</div>

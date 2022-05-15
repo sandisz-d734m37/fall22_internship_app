@@ -12,6 +12,16 @@ class Item < ApplicationRecord
     helper.number_to_currency(price_to_convert)
   end
 
+  def latest_incoming_date
+    date = shipments
+    .where("arrived = ?", true)
+    .order(updated_at: :desc)
+    .first
+    .updated_at
+
+    date.strftime("%m/%d/%Y")
+  end
+
   def self.alphabetize
     all.order(:name)
   end
