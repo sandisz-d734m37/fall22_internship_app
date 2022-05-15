@@ -1,0 +1,10 @@
+<h1>Shipment #<%= @shipment.id %></h1>
+
+<h3>Destination: <%= @shipment.destination %></h3>
+<h3>Origin: <%= @shipment.origin %></h3>
+
+<h2><%= @shipment.in_or_out %></h2>
+<h2><%= @shipment.arrival_status %></h2>
+
+<p>Created: <%= @shipment.format_created_date %></p>
+<p>Last updated: <%= @shipment.format_updated_date %></p>
