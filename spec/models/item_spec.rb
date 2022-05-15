@@ -6,6 +6,10 @@ describe Item do
     it{should have_many(:shipments).through(:shipment_items)}
   end
 
+  describe "validations" do
+    it{should validate_presence_of(:name)}
+  end
+
   before do
     @item1 = Item.create!(name: "B Item 1", price: 1000, description: "The first item", inventory:10)
     @item2 = Item.create!(name: "C Item 2", price: 2050, description: "The second item", inventory:20)
