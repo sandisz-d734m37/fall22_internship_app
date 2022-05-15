@@ -59,6 +59,12 @@ describe Item do
         expect(@item1.ordered_shipments).to eq([@item1_shipment_outgoing_2, @item1_shipment_outgoing_1, @item1_shipment_incoming_1, @item1_shipment_incoming_2])
       end
     end
+
+    context "#shipment_item_for" do
+      it "finds the shipment item shared between a item and shipment" do
+        expect(@item1.shipment_item_for(@item1_shipment_incoming_1)).to eq(@i1_incoming_1_shipment_item)
+      end
+    end
   end
 
   describe "Class methods" do

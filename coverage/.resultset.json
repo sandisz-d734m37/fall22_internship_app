@@ -16,39 +16,39 @@
           1,
           null,
           1,
-          0,
+          2,
           null,
           null,
           1,
-          0,
-          0,
+          2,
+          2,
           null,
           null,
           1,
-          0,
+          2,
           null,
           null,
           null,
           null,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          0,
+          2,
           null,
           null,
           1,
-          0,
+          3,
+          null,
+          null,
+          null,
+          null,
+          3,
+          null,
+          null,
+          1,
+          1,
           null,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null
         ]
@@ -67,16 +67,8 @@
           1,
           null,
           1,
-          2,
-          2,
-          null,
           0,
-          null,
-          null,
-          null,
-          1,
-          2,
-          2,
+          0,
           null,
           0,
           null,
@@ -84,6 +76,10 @@
           null,
           1,
           0,
+          0,
+          null,
+          0,
+          null,
           null,
           null,
           1,
@@ -91,11 +87,15 @@
           null,
           null,
           1,
-          2,
+          0,
           null,
           null,
           1,
-          2,
+          0,
+          null,
+          null,
+          1,
+          0,
           null,
           null
         ]
@@ -108,24 +108,13 @@
           null
         ]
       },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/shipments_controller.rb": {
-        "lines": [
-          1,
-          1,
-          2,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
       "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/application_controller.rb": {
         "lines": [
-          1,
-          null
-        ]
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
       "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/items_controller.rb": {
         "lines": [
@@ -182,8 +171,23 @@
         ],
         "branches": {
         }
+      },
+      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/shipments_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1652598026
+    "timestamp": 1652653023
   }
 }

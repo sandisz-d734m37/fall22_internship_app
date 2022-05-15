@@ -8,3 +8,15 @@
 
 <p>Created: <%= @shipment.format_created_date %></p>
 <p>Last updated: <%= @shipment.format_updated_date %></p>
+
+<div id="items">
+  <ul>
+
+    <% @shipment.items.each do |item| %>
+      <li id="item-<%= item.id %>">
+        <h3><a href="/items/<%= item.id %>"><%= item.name %></a></h3>
+        <p>Quantity: <%# item.shipment_items.where("shipment_id = ?", @shipment.id) %> </p>
+      </li>
+    <% end %>
+  </ul>
+</div>
