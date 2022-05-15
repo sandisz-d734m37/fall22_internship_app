@@ -33,4 +33,9 @@ class Shipment < ApplicationRecord
   def format_updated_date
     updated_at.strftime("%m/%d/%Y")
   end
+
+  def item_count
+    counts = shipment_items.map { |item| item.quantity }
+    counts.sum
+  end
 end
