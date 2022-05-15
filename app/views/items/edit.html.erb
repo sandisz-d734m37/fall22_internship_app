@@ -1,0 +1,25 @@
+<h1>Edit <%= @item.name%> </h1>
+
+<%= form_with url: "/items/#{@item.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, value: @item.name %>
+<br/>
+<br/>
+  <%= form.label :description %>
+  <%= form.text_field :description, value: @item.description %>
+<br/>
+<br/>
+  <%= form.label :price %>
+  <%= form.number_field :price, value: @item.price.to_f / 100 %>
+<br/>
+<br/>
+  <%= form.label :inventory %>
+  <%= form.number_field :inventory, value: @item.inventory %>
+<br/>
+<br/>
+  <%= form.submit "Update Item" %>
+<% end %>
+
+<% flash.each do |type, message| %>
+  <p><%= message %></p>
+<% end %>

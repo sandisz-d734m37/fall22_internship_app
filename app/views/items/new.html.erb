@@ -1,16 +1,20 @@
 <%= form_with url: "/items", method: :post, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
-
+  <br/>
+  <br/>
   <%= form.label :description %>
   <%= form.text_field :description %>
-
+  <br/>
+  <br/>
   <%= form.label :price %>
   <%= form.number_field :price %>
-
+  <br/>
+  <br/>
   <%= form.label :inventory %>
   <%= form.number_field :inventory %>
-
+  <br/>
+  <br/>
   <%= form.submit "Create Item" %>
 <% end %>
 

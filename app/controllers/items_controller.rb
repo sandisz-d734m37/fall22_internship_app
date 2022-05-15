@@ -10,6 +10,10 @@ class ItemsController < ApplicationController
   def new
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
   def create
     item = Item.new({
       name: params[:name],
@@ -17,10 +21,29 @@ class ItemsController < ApplicationController
       price: (params[:price].to_f * 100),
       inventory: params[:inventory].to_i
       })
+
     if item.save
       redirect_to "/items/#{item.id}"
     else
       redirect_to "/items/new"
+      flash[:invalid_name] = "The name field cannot be blank"
+    end
+  end
+
+  def update
+    item = Item.find(params[:id])
+
+    item.update({
+      name: params[:name],
+      description: params[:description],
+      price: (params[:price].to_f * 100),
+      inventory: params[:inventory].to_i
+      })
+
+    if item.save
+      redirect_to "/items/#{item.id}"
+    else
+      redirect_to "/items/#{item.id}/edit"
       flash[:invalid_name] = "The name field cannot be blank"
     end
   end
