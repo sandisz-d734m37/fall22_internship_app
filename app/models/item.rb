@@ -42,6 +42,12 @@ class Item < ApplicationRecord
     .first
   end
 
+  def total_in_shipment(shipment)
+    shipment_item = shipment_item_for(shipment)
+
+    shipment_item.quantity * price
+  end
+
   def self.alphabetize
     all.order(:name)
   end
