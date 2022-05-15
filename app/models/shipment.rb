@@ -21,4 +21,8 @@ class Shipment < ApplicationRecord
   def self.all_outgoing
     where("outgoing = ?", true)
   end
+
+  def self.all_incoming
+    where("outgoing = ?", false)
+  end
 end
