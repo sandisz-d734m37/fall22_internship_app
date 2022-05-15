@@ -3,7 +3,7 @@
 
 <div id="outgoing">
   <ul>
-    <% @shimpents.all_outgoing.each do |shipment| %>
+    <% @shipments.all_outgoing.each do |shipment| %>
       <li>
         <h4>Shipment #<%= shipment.id %></h4>
         <p><%= shipment.arrival_status %></p>

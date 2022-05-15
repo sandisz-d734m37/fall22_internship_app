@@ -9,4 +9,8 @@ class Shipment < ApplicationRecord
       "Incoming"
     end
   end
+
+  def self.all_outgoing
+    where("outgoing = ?", true)
+  end
 end
