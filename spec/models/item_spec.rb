@@ -10,6 +10,13 @@ describe Item do
     @item1 = Item.create!(name: "B Item 1", price: 1000, description: "The first item", inventory:10)
     @item2 = Item.create!(name: "C Item 2", price: 2050, description: "The second item", inventory:20)
     @item3 = Item.create!(name: "A Item 3", price: 3000, description: "The second item", inventory:20)
+
+    @item1_shipment_incoming_1 = Shipment.create!(origin: "123 Fake St", destination: "123 Real Corp Street", outgoing: false, arrived: false, created_at: Date.parse("2022-01-01"), updated_at: Date.parse("2022-01-08"))
+    @i1_incoming_1_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_incoming_1.id, quantity: 1)
+
+    @item1_shipment_incoming_2 = Shipment.create!(origin: "123 Fake St", destination: "123 Real Corp Street", outgoing: false, arrived: true, created_at: Date.parse("2022-01-01"), updated_at: Date.parse("2022-01-01"))
+    @i1_incoming_2_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_incoming_2.id, quantity: 1)
+
   end
 
   describe "instance methods" do
@@ -18,6 +25,13 @@ describe Item do
 
         expect(@item1.formatted_price).to eq("$10.00")
         expect(@item2.formatted_price).to eq("$20.50")
+      end
+    end
+
+    context "#latest_incoming_date" do
+      it "finds the items latest incoming shipment that has arrived" do
+        expect(@item1.latest_incoming_date).to eq("01/01/2022")
+        expect(@item1.latest_incoming_date).not_to eq("01/08/2022")
       end
     end
   end
