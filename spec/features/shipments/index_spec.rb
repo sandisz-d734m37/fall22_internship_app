@@ -50,4 +50,12 @@ describe "Shipment index page" do
       expect(page).not_to have_content("Shipment ##{@item1_shipment_incoming_2.id}")
     end
   end
+
+  it "links to shipment show pages" do
+    within("#shipment-#{@item1_shipment_outgoing_1.id}") do
+      click_link "Shipment ##{@item1_shipment_outgoing_1.id}"
+
+      expect(current_path).to eq("/shipments/#{@item1_shipment_outgoing_1.id}")
+    end
+  end
 end
