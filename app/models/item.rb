@@ -1,12 +1,12 @@
+require 'helpable'
+
 class Item < ApplicationRecord
   has_many :shipment_items
   has_many :shipments, through: :shipment_items
 
   validates_presence_of :name
 
-  def helper
-    ActionController::Base.helpers
-  end
+  include Helpable
 
   def formatted_price
     price_to_convert = price / 100.0
@@ -34,6 +34,19 @@ class Item < ApplicationRecord
   def ordered_shipments
     shipments
     .order(updated_at: :desc)
+  end
+
+  def shipment_item_for(shipment)
+    shipment_items
+    .where("shipment_id = ?", shipment.id)
+    .first
+  end
+
+  def total_in_shipment(shipment)
+    shipment_item = shipment_item_for(shipment)
+
+    total = (shipment_item.quantity * price).to_f / 100
+    helper.number_to_currency(total)
   end
 
   def self.alphabetize
