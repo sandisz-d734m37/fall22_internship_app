@@ -30,6 +30,11 @@ class Item < ApplicationRecord
     date.created_at.strftime("%m/%d/%Y") unless date.nil?
   end
 
+  def ordered_shipments
+    shipments
+    .order(updated_at: :desc)
+  end
+
   def self.alphabetize
     all.order(:name)
   end
