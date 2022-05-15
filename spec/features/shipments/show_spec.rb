@@ -63,4 +63,11 @@ describe "Shipment show page" do
       expect(page).to have_content("Total Item Price: $20.00")
     end
   end
+
+  it "displays the total number and cost of all items in the shipment" do
+    within("#totals") do
+      expect(page).to have_content("Total items: 4")
+      expect(page).to have_content("Total cost: $50.00")
+    end
+  end
 end
