@@ -1,12 +1,12 @@
+require 'helpable'
+
 class Item < ApplicationRecord
   has_many :shipment_items
   has_many :shipments, through: :shipment_items
 
   validates_presence_of :name
 
-  def helper
-    ActionController::Base.helpers
-  end
+  include Helpable
 
   def formatted_price
     price_to_convert = price / 100.0
