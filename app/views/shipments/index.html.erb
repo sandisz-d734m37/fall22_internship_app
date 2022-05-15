@@ -5,8 +5,8 @@
   <h2>Outgoing shipments</h2>
   <ul>
     <% @shipments.all_outgoing.each do |shipment| %>
-      <li>
-        <h4>Shipment #<%= shipment.id %></h4>
+      <li id="shipment-<%= shipment.id %>">
+        <h4><a href="/shipments/<%= shipment.id %>">Shipment #<%= shipment.id %></a></h4>
         <p><%= shipment.arrival_status %></p>
       </li>
     <% end %>
@@ -17,8 +17,8 @@
   <h2>Incoming shipments</h2>
   <ul>
     <% @shipments.all_incoming.each do |shipment| %>
-      <li>
-        <h4>Shipment #<%= shipment.id %></h4>
+      <li id="shipment-<%= shipment.id %>">
+        <h4><a href="/shipments/<%= shipment.id %>">Shipment #<%= shipment.id %></a></h4>
         <p><%= shipment.arrival_status %></p>
       </li>
     <% end %>
