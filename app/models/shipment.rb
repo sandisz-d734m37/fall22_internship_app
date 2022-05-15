@@ -25,4 +25,12 @@ class Shipment < ApplicationRecord
   def self.all_incoming
     where("outgoing = ?", false)
   end
+
+  def format_created_date
+    created_at.strftime("%m/%d/%Y")
+  end
+
+  def format_updated_date
+    updated_at.strftime("%m/%d/%Y")
+  end
 end
