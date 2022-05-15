@@ -70,46 +70,8 @@
           1,
           null
         ]
-      },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1652573762
+    "timestamp": 1652574833
   }
 }
