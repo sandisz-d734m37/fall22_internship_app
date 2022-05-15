@@ -11,16 +11,16 @@ describe "item index page" do
 
   it "displays a list of items" do
     expect(page).to have_content("B Item 1")
-    expect(page).to have_content("Price: 10.00")
+    expect(page).to have_content("Price: $10.00")
     expect(page).to have_content("Inventory: 10")
 
     expect(page).to have_content("C Item 2")
-    expect(page).to have_content("Price: 20.00")
+    expect(page).to have_content("Price: $20.00")
     expect(page).to have_content("Inventory: 20")
 
 
     expect(page).to have_content("A Item 3")
-    expect(page).to have_content("Price: 30.00")
+    expect(page).to have_content("Price: $30.00")
     expect(page).to have_content("Inventory: 30")
   end
 

@@ -15,12 +15,12 @@
           null,
           null,
           1,
-          2,
+          8,
           null,
           null,
           1,
-          2,
-          2,
+          8,
+          8,
           null,
           null
         ]
@@ -48,6 +48,21 @@
           null
         ]
       },
+      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -60,25 +75,6 @@
       },
       "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/jobs/application_job.rb": {
         "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/items_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
           0,
           0
         ],
@@ -106,6 +102,6 @@
         }
       }
     },
-    "timestamp": 1652572671
+    "timestamp": 1652573382
   }
 }

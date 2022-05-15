@@ -4,7 +4,7 @@
   <% @items.each do |item| %>
     <li>
       <h4><a href="/items/<%= item.id %>"><%= item.name %></a></h4>
-      <p>Price: $<%= item.formatted_price %></p>
+      <p>Price: <%= item.formatted_price %></p>
       <p>Inventory: <%= item.inventory %></p>
     </li>
   <% end %>
