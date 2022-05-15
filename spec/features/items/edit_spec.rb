@@ -21,5 +21,6 @@ describe "Item Edit Page" do
 
     expect(current_path).to eq("/items/#{@item1.id}")
     expect(page).to have_content("Price: $0.50")
+    expect(page).not_to have_content("Price: $10.00")
   end
 end

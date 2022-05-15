@@ -16,34 +16,34 @@
           1,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
-          null,
-          null,
-          0,
           null,
           null,
           1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          0,
           null,
           null,
           1,
-          0,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
           null,
           null,
           null,
@@ -68,7 +68,7 @@
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
@@ -93,6 +93,24 @@
           0,
           null,
           null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
           null
         ]
       },
@@ -102,33 +120,29 @@
           null
         ]
       },
+      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/models/shipment_item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/models/shipment.rb": {
         "lines": [
-          0,
+          1,
+          1,
+          1,
+          null,
+          1,
           0,
           0,
           null,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/models/shipment_item.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          null,
+          null,
+          null
+        ]
       },
       "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/shipments_controller.rb": {
         "lines": [
@@ -142,6 +156,6 @@
         }
       }
     },
-    "timestamp": 1652590598
+    "timestamp": 1652591092
   }
 }
