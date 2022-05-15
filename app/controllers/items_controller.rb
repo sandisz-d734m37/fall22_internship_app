@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
       name: params[:name],
       description: params[:description],
       price: (params[:price].to_f * 100),
-      inventory: params[:inventory]
+      inventory: params[:inventory].to_i
       })
     if item.save
       redirect_to "/items/#{item.id}"
