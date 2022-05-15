@@ -74,7 +74,6 @@ describe "item show page" do
 
   it "displays whether shipment is incoming or outging" do
     within("#shipment-#{@item1_shipment_outgoing_1.id}") do
-      save_and_open_page
       expect(page).to have_content("Outgoing")
 
       expect(page).not_to have_content("Incoming")
@@ -84,6 +83,14 @@ describe "item show page" do
       expect(page).to have_content("Incoming")
 
       expect(page).not_to have_content("Outgoing")
+    end
+  end
+
+  it "includes links to shipment show pages" do
+    within("#shipment-#{@item1_shipment_outgoing_1.id}") do
+      click_link("Shipment ##{@item1_shipment_outgoing_1.id}")
+
+      expect(current_path).to eq("/shipments/#{@item1_shipment_outgoing_1.id}")
     end
   end
 end
