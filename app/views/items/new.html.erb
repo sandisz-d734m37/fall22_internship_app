@@ -1,0 +1,19 @@
+<%= form_with url: "/items", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+
+  <%= form.label :price %>
+  <%= form.number_field :price %>
+
+  <%= form.label :inventory %>
+  <%= form.number_field :inventory %>
+
+  <%= form.submit "Create Item" %>
+<% end %>
+
+<% flash.each do |type, message| %>
+  <p><%= message %></p>
+<% end %>
