@@ -40,7 +40,7 @@ describe "Shipment index page" do
       expect(page).not_to have_content("Shipment ##{@both_items_shipment.id}")
     end
 
-    within("#incoming") do
+    within("#outgoing") do
       expect(page).to have_content("Shipment ##{@item1_shipment_outgoing_1.id}")
       expect(page).to have_content("Shipment ##{@item1_shipment_outgoing_2.id}")
       expect(page).to have_content("Shipment ##{@item2_shipment_outgoing.id}")
