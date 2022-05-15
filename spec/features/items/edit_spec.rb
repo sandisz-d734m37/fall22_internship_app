@@ -23,4 +23,13 @@ describe "Item Edit Page" do
     expect(page).to have_content("Price: $0.50")
     expect(page).not_to have_content("Price: $10.00")
   end
+
+  it "redirects to back to edit page if name is blank" do
+    fill_in "Name", with: ""
+
+    click_button "Update Item"
+
+    expect(current_path).to eq("/items/#{@item1.id}/edit")
+    expect(page).to have_content("The name field cannot be blank")
+  end
 end
