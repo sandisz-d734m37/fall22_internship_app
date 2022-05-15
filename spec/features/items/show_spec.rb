@@ -48,7 +48,7 @@ describe "item show page" do
 
     within("#latest-outgoing") do
       expect(page).to have_content("Latest outgoing shipment: 01/08/2022")
-      
+
       expect(page).not_to have_content("Latest outgoing shipment: 01/01/2022")
     end
   end
@@ -62,6 +62,25 @@ describe "item show page" do
       expect(page).to have_content("Shipment ##{@both_items_shipment.id}")
 
       expect(page).not_to have_content("Shipment ##{@item2_shipment_outgoing.id}")
+    end
+  end
+
+  it "displays shipments in order by updated_at" do
+    expect("Shipment ##{@item1_shipment_outgoing_1.id}").to appear_before("Shipment ##{@item1_shipment_incoming_1.id}")
+    expect("Shipment ##{@item1_shipment_incoming_1.id}").to appear_before("Shipment ##{@item1_shipment_incoming_2.id}")
+  end
+
+  it "displays whether shipment is incoming or outging" do
+    within("#shipment-#{@item1_shipment_outgoing_1.id}") do
+      expect(page).to have_content("Outgoing")
+
+      expect(page).not_to have_content("Incoming")
+    end
+
+    within("#shipment-#{@item1_shipment_incoming_1.id}") do
+      expect(page).to have_content("Incoming")
+
+      expect(page).not_to have_content("Outgoing")
     end
   end
 end
