@@ -54,6 +54,13 @@ describe Shipment do
         expect(@incoming_shipment.item_count).to eq(0)
       end
     end
+
+    context "#total" do
+      it "returns total cost of items in shipment" do
+        expect(@incoming_shipment_2.total).to eq("$210.00")
+        expect(@incoming_shipment.total).to eq("$0.00")
+      end
+    end
   end
 
   describe "class methods" do
