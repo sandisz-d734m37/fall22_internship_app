@@ -27,6 +27,18 @@ describe Shipment do
         expect(@incoming_shipment.arrival_status).to eq("Still en route")
       end
     end
+
+    context "#format_created_date" do
+      it "returns formatted date" do
+        expect(@outgoing_shipment.format_created_date).to eq("01/01/2022")
+      end
+    end
+
+    context "#format_updated_date" do
+      it "returns formatted date" do
+        expect(@outgoing_shipment.format_updated_date).to eq("01/08/2022")
+      end
+    end
   end
 
   describe "class methods" do
