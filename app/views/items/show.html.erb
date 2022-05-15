@@ -1,0 +1,27 @@
+<div id="item-info">
+  <h1><%= @item.name %></h1>
+  <h3>Description: <%= @item.description %></h3>
+  <h3>Price: <%= @item.formatted_price %></h3>
+  <h3>Inventory: <%= @item.inventory %></h3>
+</div>
+
+<div id="latest-incoming">
+  <p>Latest incoming shipment: <%= @item.latest_incoming_date %></p>
+</div>
+
+<div id="latest-outgoing">
+  <p>Latest outgoing shipment: <%= @item.latest_outgoing_date %></p>
+</div>
+<hr/>
+
+<div id="all-shipments">
+  <h2>All Shipments for <%= @item.name %></h2>
+  <ul>
+    <% @item.ordered_shipments.each do |shipment| %>
+      <li id="shipment-<%= shipment.id %>">
+        <h3><a href="/shipments/<%= shipment.id %>"> Shipment #<%= shipment.id %></a></h3>
+        <p><%= shipment.in_or_out %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

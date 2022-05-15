@@ -12,6 +12,29 @@ class Item < ApplicationRecord
     helper.number_to_currency(price_to_convert)
   end
 
+  def latest_incoming_date
+    date = shipments
+    .where("arrived = ? AND outgoing = ?", true, false)
+    .order(updated_at: :desc)
+    .first
+
+    date.updated_at.strftime("%m/%d/%Y") unless date.nil?
+  end
+
+  def latest_outgoing_date
+    date = shipments
+    .where("outgoing = ?", true)
+    .order(created_at: :desc)
+    .first
+
+    date.created_at.strftime("%m/%d/%Y") unless date.nil?
+  end
+
+  def ordered_shipments
+    shipments
+    .order(updated_at: :desc)
+  end
+
   def self.alphabetize
     all.order(:name)
   end
