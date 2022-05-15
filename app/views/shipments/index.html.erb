@@ -11,3 +11,14 @@
     <% end %>
   </ul>
 </div>
+
+<div id="incoming">
+  <ul>
+    <% @shipments.all_incoming.each do |shipment| %>
+      <li>
+        <h4>Shipment #<%= shipment.id %></h4>
+        <p><%= shipment.arrival_status %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -33,6 +33,16 @@ describe Shipment do
     context "#all_outgoing" do
       it "finds all outgoing shipments" do
         expect(Shipment.all_outgoing).to eq([@outgoing_shipment, @outgoing_shipment_2])
+
+        expect(Shipment.all_outgoing).not_to include(@incoming_shipment)
+      end
+    end
+
+    context "#all_incoming" do
+      it "finds all incoming shipments" do
+        expect(Shipment.all_incoming).to eq([@incoming_shipment, @incoming_shipment_2])
+
+        expect(Shipment.all_incoming).not_to include(@outgoing_shipment)
       end
     end
   end
