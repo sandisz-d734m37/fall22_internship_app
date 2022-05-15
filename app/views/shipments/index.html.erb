@@ -2,6 +2,7 @@
 <hr/>
 
 <div id="outgoing">
+  <h2>Outgoing shipments</h2>
   <ul>
     <% @shipments.all_outgoing.each do |shipment| %>
       <li>
@@ -11,8 +12,9 @@
     <% end %>
   </ul>
 </div>
-
+<hr/>
 <div id="incoming">
+  <h2>Incoming shipments</h2>
   <ul>
     <% @shipments.all_incoming.each do |shipment| %>
       <li>
