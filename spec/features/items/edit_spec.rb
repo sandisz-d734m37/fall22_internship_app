@@ -8,9 +8,9 @@ describe "Item Edit Page" do
   end
 
   it "comes with preloaded values" do
-    expect(page).to have_selector("Name", value: "Item 1")
-    expect(page).to have_selector("Description", value: "The first item")
-    expect(page).to have_selector("Price", value: 10.00)
-    expect(page).to have_selector("Inventory", value: 10)
+    expect(page).to have_field("Name", with: "Item 1")
+    expect(page).to have_field("Description", with: "The first item")
+    expect(page).to have_field("Price", with: 10.00)
+    expect(page).to have_field("Inventory", with: 10)
   end
 end

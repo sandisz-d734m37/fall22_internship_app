@@ -10,6 +10,10 @@ class ItemsController < ApplicationController
   def new
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
   def create
     item = Item.new({
       name: params[:name],
