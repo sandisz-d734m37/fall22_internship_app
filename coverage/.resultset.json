@@ -101,8 +101,17 @@
           1,
           null
         ]
+      },
+      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/shipments_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1652582956
+    "timestamp": 1652583138
   }
 }

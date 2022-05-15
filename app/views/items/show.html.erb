@@ -19,7 +19,7 @@
   <ul>
     <% @item.ordered_shipments.each do |shipment| %>
       <li id="shipment-<%= shipment.id %>">
-        <h3>Shipment #<%= shipment.id %></h3>
+        <h3><a href="/shipments/<%= shipment.id %>"> Shipment #<%= shipment.id %></a></h3>
         <p><%= shipment.in_or_out %></p>
       </li>
     <% end %>
