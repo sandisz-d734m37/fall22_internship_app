@@ -15,7 +15,7 @@
 <div id="all-shipments">
   <ul>
     <% @item.ordered_shipments.each do |shipment| %>
-      <li>
+      <li id="shipment-<%= shipment.id %>">
         <h3>Shipment #<%= shipment.id %></h3>
         <p><%= shipment.in_or_out %></p>
       </li>

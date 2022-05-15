@@ -33,10 +33,12 @@ describe "item show page" do
     expect(page).to have_content("Item 1")
     expect(page).to have_content("Price: $10.00")
     expect(page).to have_content("Inventory: 10")
+    expect(page).to have_content("Description: The first item")
 
     expect(page).not_to have_content("Item 2")
     expect(page).not_to have_content("Price: $20.00")
     expect(page).not_to have_content("Inventory: 20")
+    expect(page).not_to have_content("Description: The second item")
   end
 
   it "displays the latest shipment dates for this item" do
@@ -72,6 +74,7 @@ describe "item show page" do
 
   it "displays whether shipment is incoming or outging" do
     within("#shipment-#{@item1_shipment_outgoing_1.id}") do
+      save_and_open_page
       expect(page).to have_content("Outgoing")
 
       expect(page).not_to have_content("Incoming")
