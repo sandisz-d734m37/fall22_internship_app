@@ -19,7 +19,7 @@ describe Item do
     @i1_incoming_1_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_incoming_1.id, quantity: 1)
 
     @item1_shipment_incoming_2 = Shipment.create!(origin: "123 Fake St", destination: "123 Real Corp Street", outgoing: false, arrived: true, created_at: Date.parse("2022-01-01"), updated_at: Date.parse("2022-01-01"))
-    @i1_incoming_2_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_incoming_2.id, quantity: 1)
+    @i1_incoming_2_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_incoming_2.id, quantity: 3)
 
     @item1_shipment_outgoing_1 = Shipment.create!(origin: "123 Real Corp Street", destination: "123 Fake St", outgoing: true, arrived: true, created_at: Date.parse("2022-01-08"), updated_at: Date.parse("2022-01-09"))
     @i1_outgoing_1_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_outgoing_1.id, quantity: 1)
@@ -63,6 +63,12 @@ describe Item do
     context "#shipment_item_for" do
       it "finds the shipment item shared between a item and shipment" do
         expect(@item1.shipment_item_for(@item1_shipment_incoming_1)).to eq(@i1_incoming_1_shipment_item)
+      end
+    end
+
+    context "#total_in_shipment" do
+      it "calculates the total cost of this item within the shipment" do
+        expect(@item1.total_in_shipment(@item1_shipment_incoming_2)).tp eq(3000)
       end
     end
   end

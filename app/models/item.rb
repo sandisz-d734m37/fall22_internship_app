@@ -36,6 +36,12 @@ class Item < ApplicationRecord
     .order(updated_at: :desc)
   end
 
+  def shipment_item_for(shipment)
+    shipment_items
+    .where("shipment_id = ?", shipment.id)
+    .first
+  end
+
   def self.alphabetize
     all.order(:name)
   end

@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-15T16:17:03-06:00">2022-05-15T16:17:03-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-15T16:24:32-06:00">2022-05-15T16:24:32-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  35.42%
+  36.73%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.45
+         0.46
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>96</b> relevant lines,
-    <span class="green"><b>34</b> lines covered</span> and
+    <b>98</b> relevant lines,
+    <span class="green"><b>36</b> lines covered</span> and
     <span class="red"><b>62</b> lines missed. </span>
     (<span class="red">
-  35.42%
+  36.73%
 </span>
 )
   </div>
@@ -128,11 +128,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#767452e9c2e8e5630b49717978306d8696e2348f" class="src_link" title="app/models/item.rb">app/models/item.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">42</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">19</td>
+            <td class="cell--number">48</td>
+            <td class="cell--number">21</td>
+            <td class="cell--number">21</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.47</td>
+            <td class="cell--number">1.43</td>
             
           </tr>
         
@@ -319,7 +319,7 @@
     <span class="group_name">Models</span>
     (<span class="covered_percent">
       <span class="red">
-  76.74%
+  77.78%
 </span>
 
      </span>
@@ -339,11 +339,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>43</b> relevant lines,
-    <span class="green"><b>33</b> lines covered</span> and
+    <b>45</b> relevant lines,
+    <span class="green"><b>35</b> lines covered</span> and
     <span class="red"><b>10</b> lines missed. </span>
     (<span class="red">
-  76.74%
+  77.78%
 </span>
 )
   </div>
@@ -380,11 +380,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#767452e9c2e8e5630b49717978306d8696e2348f" class="src_link" title="app/models/item.rb">app/models/item.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">42</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">19</td>
+            <td class="cell--number">48</td>
+            <td class="cell--number">21</td>
+            <td class="cell--number">21</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.47</td>
+            <td class="cell--number">1.43</td>
             
           </tr>
         
@@ -1564,8 +1564,8 @@
     
 
     <div class="t-line-summary">
-      <b>19</b> relevant lines.
-      <span class="green"><b>19</b> lines covered</span> and
+      <b>21</b> relevant lines.
+      <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -2001,7 +2001,7 @@
 
             
 
-            <code class="ruby">  def self.alphabetize</code>
+            <code class="ruby">  def shipment_item_for(shipment)</code>
           </li>
         </div>
       
@@ -2012,7 +2012,7 @@
 
             
 
-            <code class="ruby">    all.order(:name)</code>
+            <code class="ruby">    shipment_items</code>
           </li>
         </div>
       
@@ -2023,12 +2023,78 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    .where(&quot;shipment_id = ?&quot;, shipment.id)</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby">    .first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="45">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def self.alphabetize</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="46">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    all.order(:name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
             
             
 

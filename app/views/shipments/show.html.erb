@@ -15,7 +15,9 @@
     <% @shipment.items.each do |item| %>
       <li id="item-<%= item.id %>">
         <h3><a href="/items/<%= item.id %>"><%= item.name %></a></h3>
-        <p>Quantity: <%# item.shipment_items.where("shipment_id = ?", @shipment.id) %> </p>
+        <p>Quantity: <%= item.shipment_item_for(@shipment).quantity %> </p>
+        <p>Unit Price: <%= item.formatted_price %> </p>
+        <p>Total Price: <%= item.total_in_shipment(@shipment).formatted_price %> </p>
       </li>
     <% end %>
   </ul>
