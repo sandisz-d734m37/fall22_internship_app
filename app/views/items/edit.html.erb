@@ -15,3 +15,7 @@
 
   <%= form.submit "Update Item" %>
 <% end %>
+
+<% flash.each do |type, message| %>
+  <p><%= message %></p>
+<% end %>
