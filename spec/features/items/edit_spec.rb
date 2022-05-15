@@ -32,4 +32,15 @@ describe "Item Edit Page" do
     expect(current_path).to eq("/items/#{@item1.id}/edit")
     expect(page).to have_content("The name field cannot be blank")
   end
+
+  it "inventory and price default to 0 if left blank" do
+    fill_in "Price", with: ""
+    fill_in "Inventory", with: ""
+
+    click_button "Update Item"
+
+    expect(current_path).to eq("/items/#{@item1.id}")
+    expect(page).to have_content("Price: $0.00")
+    expect(page).to have_content("Inventory: 0")
+  end
 end
