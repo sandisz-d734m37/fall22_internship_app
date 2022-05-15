@@ -68,7 +68,7 @@ describe Item do
 
     context "#total_in_shipment" do
       it "calculates the total cost of this item within the shipment" do
-        expect(@item1.total_in_shipment(@item1_shipment_incoming_2)).to eq(3000)
+        expect(@item1.total_in_shipment(@item1_shipment_incoming_2)).to eq("$30.00")
       end
     end
   end

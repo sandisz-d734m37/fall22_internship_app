@@ -45,7 +45,8 @@ class Item < ApplicationRecord
   def total_in_shipment(shipment)
     shipment_item = shipment_item_for(shipment)
 
-    shipment_item.quantity * price
+    total = (shipment_item.quantity * price).to_f / 100
+    helper.number_to_currency(total)
   end
 
   def self.alphabetize
