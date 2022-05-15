@@ -17,9 +17,8 @@ class Item < ApplicationRecord
     .where("arrived = ? AND outgoing = ?", true, false)
     .order(updated_at: :desc)
     .first
-    .updated_at
 
-    date.strftime("%m/%d/%Y")
+    date.updated_at.strftime("%m/%d/%Y") unless date.nil?
   end
 
   def latest_outgoing_date
@@ -27,9 +26,8 @@ class Item < ApplicationRecord
     .where("outgoing = ?", true)
     .order(created_at: :desc)
     .first
-    .created_at
 
-    date.strftime("%m/%d/%Y")
+    date.created_at.strftime("%m/%d/%Y") unless date.nil?
   end
 
   def self.alphabetize
