@@ -7,6 +7,41 @@
           null
         ]
       },
+      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/models/shipment.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/models/shipment_item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/models/item.rb": {
         "lines": [
           1,
@@ -53,59 +88,13 @@
           null
         ]
       },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/models/shipment.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/models/shipment_item.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/shipments_controller.rb": {
-        "lines": [
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
       "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/application_controller.rb": {
         "lines": [
-          1,
-          null
-        ]
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
       "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/items_controller.rb": {
         "lines": [
@@ -162,8 +151,23 @@
         ],
         "branches": {
         }
+      },
+      "/Users/sandiszthieme/shopify/internship/sandisz_t_intern_app_f22/app/controllers/shipments_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1652593233
+    "timestamp": 1652593409
   }
 }
