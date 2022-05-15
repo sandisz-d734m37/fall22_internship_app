@@ -4,6 +4,6 @@ class ShipmentsController < ApplicationController
   end
 
   def index
-    @shipments = Shipment.all
+    @shipments = Shipment.all.order(created_at: :desc)
   end
 end

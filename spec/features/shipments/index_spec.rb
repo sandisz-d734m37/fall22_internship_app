@@ -14,7 +14,7 @@ describe "Shipment index page" do
     @item1_shipment_incoming_1 = Shipment.create!(origin: "123 Fake St", destination: "123 Real Corp Street", outgoing: false, arrived: false, created_at: Date.parse("2022-01-01"), updated_at: Date.parse("2022-01-08"))
     @i1_incoming_1_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_incoming_1.id, quantity: 1)
 
-    @item1_shipment_incoming_2 = Shipment.create!(origin: "123 Fake St", destination: "123 Real Corp Street", outgoing: false, arrived: true, created_at: Date.parse("2022-01-01"), updated_at: Date.parse("2022-01-01"))
+    @item1_shipment_incoming_2 = Shipment.create!(origin: "123 Fake St", destination: "123 Real Corp Street", outgoing: false, arrived: true, created_at: Date.parse("2022-01-10"), updated_at: Date.parse("2022-01-01"))
     @i1_incoming_2_shipment_item = ShipmentItem.create!(item_id: @item1.id, shipment_id: @item1_shipment_incoming_2.id, quantity: 1)
 
     @item2_shipment_outgoing = Shipment.create!(origin: "123 Real Corp Street", destination: "123 Fake St", outgoing: true, arrived: true, created_at: Date.parse("2022-11-01"), updated_at: Date.parse("2022-12-01"))
@@ -70,6 +70,16 @@ describe "Shipment index page" do
       expect(page).to have_content("Still en route")
 
       expect(page).not_to have_content("Arrived")
+    end
+  end
+
+  it "displays shipments in order by date created" do
+    within("#outgoing") do
+      expect("Shipment ##{@item1_shipment_outgoing_1.id}").to appear_before("Shipment ##{@item1_shipment_outgoing_2.id}")
+    end
+
+    within("#incoming") do
+      expect("Shipment ##{@item1_shipment_incoming_2.id}").to appear_before("Shipment ##{@item1_shipment_incoming_1.id}")
     end
   end
 end
