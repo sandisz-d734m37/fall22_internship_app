@@ -1,0 +1,26 @@
+<h1>Real Corp.'s Shipments</h1>
+<hr/>
+
+<div id="outgoing">
+  <h2>Outgoing shipments</h2>
+  <ul>
+    <% @shipments.all_outgoing.each do |shipment| %>
+      <li id="shipment-<%= shipment.id %>">
+        <h4><a href="/shipments/<%= shipment.id %>">Shipment #<%= shipment.id %></a></h4>
+        <p><%= shipment.arrival_status %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<hr/>
+<div id="incoming">
+  <h2>Incoming shipments</h2>
+  <ul>
+    <% @shipments.all_incoming.each do |shipment| %>
+      <li id="shipment-<%= shipment.id %>">
+        <h4><a href="/shipments/<%= shipment.id %>">Shipment #<%= shipment.id %></a></h4>
+        <p><%= shipment.arrival_status %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -9,4 +9,20 @@ class Shipment < ApplicationRecord
       "Incoming"
     end
   end
+
+  def arrival_status
+    if arrived
+      "Arrived"
+    else
+      "Still en route"
+    end
+  end
+
+  def self.all_outgoing
+    where("outgoing = ?", true)
+  end
+
+  def self.all_incoming
+    where("outgoing = ?", false)
+  end
 end
