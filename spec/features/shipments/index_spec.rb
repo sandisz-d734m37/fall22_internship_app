@@ -82,4 +82,18 @@ describe "Shipment index page" do
       expect("Shipment ##{@item1_shipment_incoming_2.id}").to appear_before("Shipment ##{@item1_shipment_incoming_1.id}")
     end
   end
+
+  it "Has a button to create a new shipment" do
+    click_button("Create a new shipment")
+
+    expect(current_path).to eq("/shipments/new")
+  end
+
+  context "navigation" do
+    it "has links to home page, item index, and shipment index" do
+      expect(page).to have_link("Go to home page")
+      expect(page).to have_link("Go to item index")
+      expect(page).to have_link("Go to shipment index")
+    end
+  end
 end

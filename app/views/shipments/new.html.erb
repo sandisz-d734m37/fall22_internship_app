@@ -7,17 +7,18 @@
   <%= form.text_field :destination %>
   <br>
   <br>
-  <%= form.label :outgoing %>
   <%= form.check_box :outgoing%>
+  <%= form.label :outgoing %>
   <br>
   <br>
   <% @items.each do |item| %>
     <%= check_box_tag 'selected_items[]', item.id %>
     <%= item.name %>
     <br>
-    <p>Count:</p>
+    Count:
     <%= number_field_tag 'item_count[]', nil, min: 1, max: item.inventory, class: "#{item.id}" %>
     <br>
+    <hr>
   <% end %>
   <br>
   <br>

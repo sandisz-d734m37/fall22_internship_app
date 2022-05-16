@@ -47,4 +47,10 @@ class ItemsController < ApplicationController
       flash[:invalid_name] = "The name field cannot be blank"
     end
   end
+
+  def destroy
+    ShipmentItem.where("item_id = ?", params[:id]).destroy_all
+    Item.find(params[:id]).destroy
+    redirect_to '/items'
+  end
 end

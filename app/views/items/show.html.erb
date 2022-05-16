@@ -4,6 +4,12 @@
   <h3>Price: <%= @item.formatted_price %></h3>
   <h3>Inventory: <%= @item.inventory %></h3>
 </div>
+<br>
+<%= button_to "Edit this item", "/items/#{@item.id}/edit", method: :get %>
+<br>
+<br>
+<%= button_to "Delete this item", "/items/#{@item.id}", method: :delete %>
+<br>
 
 <div id="latest-incoming">
   <p>Latest incoming shipment: <%= @item.latest_incoming_date %></p>
