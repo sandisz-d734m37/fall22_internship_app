@@ -71,6 +71,20 @@ describe Item do
         expect(@item1.total_in_shipment(@item1_shipment_incoming_2)).to eq("$30.00")
       end
     end
+
+    context "#update_for_shipment" do
+      it "updates shipment inventory based shipment_item.quantity and shipment.outgoing" do
+        expect(@item1.inventory).to eq(10)
+
+        @item1.update_for_shipment(@item1_shipment_outgoing_1)
+
+        expect(@item1.inventory).to eq(9)
+
+        @item1.update_for_shipment(@item1_shipment_incoming_1)
+
+        expect(@item1.inventory).to eq(10)
+      end
+    end
   end
 
   describe "Class methods" do
