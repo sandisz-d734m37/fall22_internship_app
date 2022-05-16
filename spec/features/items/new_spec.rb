@@ -39,4 +39,12 @@ describe "New Item page" do
     expect(page).to have_content("Price: $0.00")
     expect(page).to have_content("Inventory: 0")
   end
+
+  context "navigation" do
+    it "has links to home page, item index, and shipment index" do
+      expect(page).to have_link("Go to home page")
+      expect(page).to have_link("Go to item index")
+      expect(page).to have_link("Go to shipment index")
+    end
+  end
 end

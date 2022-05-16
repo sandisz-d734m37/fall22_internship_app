@@ -42,4 +42,13 @@ describe "new shipment page" do
     expect(page).not_to have_content("Arrived")
   end
 
+  context "navigation" do
+    it "has links to home page, item index, and shipment index" do
+      click_button("Edit shipment")
+      
+      expect(page).to have_link("Go to home page")
+      expect(page).to have_link("Go to item index")
+      expect(page).to have_link("Go to shipment index")
+    end
+  end
 end
