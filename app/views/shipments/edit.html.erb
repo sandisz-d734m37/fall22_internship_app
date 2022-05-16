@@ -1,0 +1,7 @@
+<%= form_with url: "/shipments/#{@shipment.id}", method: :patch do |form| %>
+  <%= form.label :arrived %>
+  <%= form.check_box :arrived%>
+  <br>
+  <br>
+  <%= form.submit "Update shipment" %>
+<% end %>
