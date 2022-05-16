@@ -49,4 +49,23 @@ describe "new shipment page" do
 
     expect(page).not_to have_content("Outgoing")
   end
+
+  it "will decrease item inventory when outgoing shipment is created" do
+    fill_in "Destination", with: "123 Fake st"
+    page.check('Outgoing')
+    find(:css, "#selected_items_[value=#{@item1.id}]").set(true)
+    find(:css, "#item_count_[class=#{@item1.id}]").fill_in with: 5
+
+    click_button "Create Shipment"
+
+    expect(page).to have_content("Outgoing")
+    expect(page).to have_content("Still en route")
+
+    within("#items") do
+      click_link("Item 1")
+    end
+
+    expect(page).to have_content("Inventory: 5")
+    expect(page).not_to have_content("Inventory: 10")
+  end
 end
