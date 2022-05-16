@@ -24,6 +24,10 @@ class ShipmentsController < ApplicationController
       params[:selected_items].each_with_index do |item_id, index|
           ShipmentItem.create!(item_id: item_id, shipment_id: shipment.id, quantity: counts[index])
       end
+
+      shipment.items.each do |item|
+        item.update_for_shipment(shipment)
+      end
       redirect_to "/shipments/#{shipment.id}"
     else
       redirect_to "/users/#{party.user_id}/movies/#{params[:movie_id]}/parties/new"
