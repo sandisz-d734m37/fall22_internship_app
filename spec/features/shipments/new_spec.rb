@@ -87,4 +87,50 @@ describe "new shipment page" do
     expect(page).to have_content("Inventory: 15")
     expect(page).not_to have_content("Inventory: 10")
   end
+
+  context "will redirect back to new page if:" do
+    it "origin is left blank" do
+      fill_in "Origin", with: ""
+      fill_in "Destination", with: "123 Real Corp st"
+      find(:css, "#selected_items_[value=#{@item1.id}]").set(true)
+      find(:css, "#item_count_[class=#{@item1.id}]").fill_in with: 5
+
+      click_button "Create Shipment"
+
+      expect(current_path).to eq("/shipments/new")
+      expect(page).to have_content("Origin must not be left blank")
+    end
+
+    it "destination is left blank" do
+      find(:css, "#selected_items_[value=#{@item1.id}]").set(true)
+      find(:css, "#item_count_[class=#{@item1.id}]").fill_in with: 5
+
+      click_button "Create Shipment"
+
+      expect(current_path).to eq("/shipments/new")
+      expect(page).to have_content("Destination must not be left blank")
+    end
+
+    it "no item is selected" do
+      fill_in "Destination", with: "123 Real Corp st"
+      find(:css, "#item_count_[class=#{@item1.id}]").fill_in with: 5
+
+      click_button "Create Shipment"
+
+      expect(current_path).to eq("/shipments/new")
+      expect(page).to have_content("You must select items to create a shipment")
+    end
+
+    it "items are selected but no quantity is entered" do
+      fill_in "Destination", with: "123 Real Corp st"
+      find(:css, "#selected_items_[value=#{@item1.id}]").set(true)
+      find(:css, "#item_count_[class=#{@item1.id}]").fill_in with: 5
+      find(:css, "#selected_items_[value=#{@item3.id}]").set(true)
+
+      click_button "Create Shipment"
+
+      expect(current_path).to eq("/shipments/new")
+      expect(page).to have_content("You must enter an item count for all items")
+    end
+  end
 end
