@@ -14,9 +14,9 @@ describe "new shipment page" do
     fill_in "Destination", with: "123 Fake st"
     page.check('Outgoing')
     find(:css, "#selected_items_[value=#{@item1.id}]").set(true)
-    find(:css, "#item_count_[value=#{@item1.id}]").fill_in(5)
+    find(:css, "#item_count_[class=#{@item1.id}]").fill_in with: 5
     find(:css, "#selected_items_[value=#{@item3.id}]").set(true)
-    find(:css, "#item_count_[value=#{@item3.id}]").fill_in(5)
+    find(:css, "#item_count_[class=#{@item3.id}]").fill_in with: 5
 
     click_button "Create Shipment"
 
@@ -24,7 +24,7 @@ describe "new shipment page" do
     expect(page).to have_content("Still en route")
 
     expect(page).not_to have_content("Incoming")
-    expect(page).to have_content("Arrived")
+    expect(page).not_to have_content("Arrived")
 
     within("#items") do
       expect(page).to have_content("Item 1")
