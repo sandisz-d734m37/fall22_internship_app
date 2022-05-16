@@ -12,13 +12,12 @@ class ShipmentsController < ApplicationController
   end
 
   def create
-    # binding.pry
     shipment = Shipment.new(
       origin: params[:origin],
       destination: params[:destination],
       outgoing: params[:outgoing].to_i
     )
-    # binding.pry
+    
     counts = params[:item_count].reject{ |count| count.empty? }
 
     if shipment.save && params[:selected_items] && counts.length == params[:selected_items].length
