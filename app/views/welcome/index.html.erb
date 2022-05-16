@@ -1,0 +1,10 @@
+<h1>Welcome to the Real Corp Shipment Service Website</h1>
+<h2>Here you can create, update, look at, and destroy items and shipments shipments</h2>
+<br>
+<%= button_to "Create a new item", "/items/new", method: :get %>
+<br>
+<% if @items.empty? %>
+  <p>You cannot create a shipment with no items.</p>
+<% else %>
+  <%= button_to "Create a new shipment", "/shipments/new", method: :get %>
+<% end %>

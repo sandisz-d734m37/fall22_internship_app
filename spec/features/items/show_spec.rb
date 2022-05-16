@@ -94,6 +94,12 @@ describe "item show page" do
     end
   end
 
+  it "Has a button to edit the item" do
+    click_button("Edit this item")
+
+    expect(current_path).to eq("/items/#{@item1.id}/edit")
+  end
+
   context "navigation" do
     it "has links to home page, item index, and shipment index" do
       expect(page).to have_link("Go to home page")

@@ -36,6 +36,12 @@ describe "item index page" do
     end
   end
 
+  it "Has a button to create a new item" do
+    click_button("Create a new item")
+
+    expect(current_path).to eq("/items/new")
+  end
+
   context "navigation" do
     it "has links to home page, item index, and shipment index" do
       expect(page).to have_link("Go to home page")
