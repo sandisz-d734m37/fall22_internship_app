@@ -9,8 +9,7 @@ describe "new shipment page" do
     visit "/shipments/new"
   end
 
-  it "has a form to create a new shipment" do
-    fill_in "Origin", with: "123 Real Corp st"
+  it "has a form to create a new shipment w auto-populated origin field" do
     fill_in "Destination", with: "123 Fake st"
     page.check('Outgoing')
     find(:css, "#selected_items_[value=#{@item1.id}]").set(true)
