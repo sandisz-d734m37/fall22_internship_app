@@ -1,0 +1,29 @@
+<%= form_with url: "/shipments", method: :post, local: true do |form| %>
+  <%= form.label :origin %>
+  <%= form.text_field :origin, value: "123 Real Corp st." %>
+  <br>
+  <br>
+  <%= form.label :destination %>
+  <%= form.text_field :destination %>
+  <br>
+  <br>
+  <%= form.label :outgoing %>
+  <%= form.check_box :outgoing%>
+  <br>
+  <br>
+  <% @items.each do |item| %>
+    <%= check_box_tag 'selected_items[]', item.id %>
+    <%= item.name %>
+    <br>
+    <p>Count:</p>
+    <%= number_field_tag 'item_count[]', nil, min: 1, max: item.inventory, class: "#{item.id}" %>
+    <br>
+  <% end %>
+  <br>
+  <br>
+  <%= form.submit "Create Shipment" %>
+<% end %>
+
+<% flash.each do |type, message| %>
+  <p><%= message %></p>
+<% end %>

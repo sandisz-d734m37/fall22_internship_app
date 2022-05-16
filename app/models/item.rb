@@ -49,6 +49,17 @@ class Item < ApplicationRecord
     helper.number_to_currency(total)
   end
 
+  def update_for_shipment(shipment)
+    shipment_item = shipment_item_for(shipment)
+    if shipment.outgoing
+      self.inventory -= shipment_item.quantity
+      self.save
+    else
+      self.inventory += shipment_item.quantity
+      self.save
+    end
+  end
+
   def self.alphabetize
     all.order(:name)
   end
