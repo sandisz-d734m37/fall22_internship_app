@@ -21,11 +21,11 @@ describe "new shipment page" do
 
     page.check('Arrived')
 
-    click_button("Update Shipment")
+    click_button("Update shipment")
 
     expect(current_path).to eq("/shipments/#{@item1_outgoing_shipment.id}")
-    expect(page).to have_content("Still en route")
-    expect(page).not_to have_content("Arrived")
+    expect(page).to have_content("Arrived")
+    expect(page).not_to have_content("Still en route")
   end
 
 end

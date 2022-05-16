@@ -8,6 +8,8 @@
 
 <p>Created: <%= @shipment.format_created_date %></p>
 <p>Last updated: <%= @shipment.format_updated_date %></p>
+
+<%= button_to "Edit shipment", "/shipments/#{@shipment.id}/edit", method: :get %>
 <hr>
 
 <div id="items">
