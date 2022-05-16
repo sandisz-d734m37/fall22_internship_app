@@ -102,7 +102,6 @@ describe "new shipment page" do
     end
 
     it "destination is left blank" do
-      save_and_open_page
       find(:css, "#selected_items_[value=#{@item1.id}]").set(true)
       find(:css, "#item_count_[class=#{@item1.id}]").fill_in with: 5
 
