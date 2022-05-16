@@ -27,7 +27,7 @@ class ShipmentsController < ApplicationController
       redirect_to "/shipments/#{shipment.id}"
     else
       redirect_to "/users/#{party.user_id}/movies/#{params[:movie_id]}/parties/new"
-      flash[:invalid_duration] = "Invalid Data: Duration must be greater than or equal to the movie's runtime."
+      flash[:invalid_origin] = "Invalid Data: Duration must be greater than or equal to the movie's runtime."
     end
   end
 end

@@ -37,4 +37,16 @@ describe "new shipment page" do
       expect(page).to have_content("Total cost: $200.00")
     end
   end
+
+  it "will be incoming if 'outging' check box is not checked" do
+    fill_in "Destination", with: "123 Fake st"
+    find(:css, "#selected_items_[value=#{@item1.id}]").set(true)
+    find(:css, "#item_count_[class=#{@item1.id}]").fill_in with: 5
+
+    click_button "Create Shipment"
+
+    expect(page).to have_content("Incoming")
+
+    expect(page).not_to have_content("Outgoing")
+  end
 end
