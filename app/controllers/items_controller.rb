@@ -50,7 +50,6 @@ class ItemsController < ApplicationController
 
   def destroy
     ShipmentItem.where("item_id = ?", params[:id]).destroy_all
-    # binding.pry
     Item.find(params[:id]).destroy
     redirect_to '/items'
   end
