@@ -7,6 +7,9 @@
 <br>
 <%= button_to "Edit this item", "/items/#{@item.id}/edit", method: :get %>
 <br>
+<br>
+<%= button_to "Delete this item", "/items/#{@item.id}", method: :delete %>
+<br>
 
 <div id="latest-incoming">
   <p>Latest incoming shipment: <%= @item.latest_incoming_date %></p>
