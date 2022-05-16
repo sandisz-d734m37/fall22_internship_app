@@ -100,6 +100,14 @@ describe "item show page" do
     expect(current_path).to eq("/items/#{@item1.id}/edit")
   end
 
+  it "Has a button to delete the item" do
+    click_button("Delete this item")
+
+    expect(current_path).to eq("/items")
+
+    expect(page).not_to have_content("Item 1")
+  end
+
   context "navigation" do
     it "has links to home page, item index, and shipment index" do
       expect(page).to have_link("Go to home page")
