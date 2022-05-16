@@ -28,4 +28,18 @@ describe "new shipment page" do
     expect(page).not_to have_content("Still en route")
   end
 
+  it "still redirects to show and does nothing when checkbox is not selected" do
+    expect(page).to have_content("Still en route")
+    expect(page).not_to have_content("Arrived")
+
+    click_button("Edit shipment")
+    expect(current_path).to eq("/shipments/#{@item1_outgoing_shipment.id}/edit")
+
+    click_button("Update shipment")
+
+    expect(current_path).to eq("/shipments/#{@item1_outgoing_shipment.id}")
+    expect(page).to have_content("Still en route")
+    expect(page).not_to have_content("Arrived")
+  end
+
 end
