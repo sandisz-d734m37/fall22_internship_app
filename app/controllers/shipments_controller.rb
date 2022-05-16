@@ -18,8 +18,10 @@ class ShipmentsController < ApplicationController
       destination: params[:destination],
       outgoing: params[:outgoing].to_i
     )
-    if shipment.save
-      counts = params[:item_count].reject{ |count| count.empty? }
+    # binding.pry
+    counts = params[:item_count].reject{ |count| count.empty? }
+
+    if shipment.save && params[:selected_items] && counts.length == params[:selected_items].length
 
       params[:selected_items].each_with_index do |item_id, index|
           ShipmentItem.create!(item_id: item_id, shipment_id: shipment.id, quantity: counts[index])
@@ -30,8 +32,11 @@ class ShipmentsController < ApplicationController
       end
       redirect_to "/shipments/#{shipment.id}"
     else
-      redirect_to "/users/#{party.user_id}/movies/#{params[:movie_id]}/parties/new"
-      flash[:invalid_origin] = "Invalid Data: Duration must be greater than or equal to the movie's runtime."
+      redirect_to "/shipments/new"
+      flash[:invalid_origin] = "Origin must not be left blank"
+      flash[:invalid_destination] = "Destination must not be left blank"
+      flash[:invalid_selection] = "You must select items to create a shipment"
+      flash[:invalid_count] = "You must enter an item count for all items"
     end
   end
 end

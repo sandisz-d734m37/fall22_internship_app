@@ -23,3 +23,7 @@
   <br>
   <%= form.submit "Create Shipment" %>
 <% end %>
+
+<% flash.each do |type, message| %>
+  <p><%= message %></p>
+<% end %>
