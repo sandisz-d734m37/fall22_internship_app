@@ -54,7 +54,7 @@ class Item < ApplicationRecord
     if shipment.outgoing
       self.inventory -= shipment_item.quantity
       self.save
-    else
+    elsif !shipment.outgoing && shipment.arrived
       self.inventory += shipment_item.quantity
       self.save
     end

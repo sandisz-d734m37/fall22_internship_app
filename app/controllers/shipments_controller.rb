@@ -52,6 +52,11 @@ class ShipmentsController < ApplicationController
       })
 
     shipment.save
+    unless shipment.outgoing
+      shipment.items.each do |item|
+        item.update_for_shipment(shipment)
+      end
+    end
 
     redirect_to "/shipments/#{shipment.id}"
   end
