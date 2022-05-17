@@ -80,6 +80,12 @@ describe "new shipment page" do
     expect(page).to have_content("Incoming")
     expect(page).to have_content("Still en route")
 
+    click_button "Edit shipment"
+
+    page.check('Arrived')
+
+    click_button("Update shipment")
+
     within("#items") do
       click_link("Item 1")
     end
