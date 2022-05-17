@@ -2,7 +2,11 @@
 <hr/>
 
 <br>
-<%= button_to "Create a new shipment", "/shipments/new", method: :get %>
+<% if @items.empty? %>
+  <p>You cannot create a shipment with no items.</p>
+<% else %>
+  <%= button_to "Create a new shipment", "/shipments/new", method: :get %>
+<% end %>
 <br>
 
 <div id="outgoing">
