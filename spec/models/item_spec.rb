@@ -80,6 +80,12 @@ describe Item do
 
         expect(@item1.inventory).to eq(9)
 
+        @item1_shipment_incoming_1.update({
+          arrived: true
+          })
+
+        @item1_shipment_incoming_1.save
+
         @item1.update_for_shipment(@item1_shipment_incoming_1)
 
         expect(@item1.inventory).to eq(10)
