@@ -89,6 +89,19 @@ describe "Shipment index page" do
     expect(current_path).to eq("/shipments/new")
   end
 
+  it "hides the new shipment button when there are no items" do
+    expect(page).to have_button("Create a new shipment")
+
+    ShipmentItem.destroy_all
+    Item.destroy_all
+
+    visit "/shipments"
+
+    expect(page).not_to have_button("Create a new shipment")
+
+    expect(page).to have_content("You cannot create a shipment with no items.")
+  end
+
   context "navigation" do
     it "has links to home page, item index, and shipment index" do
       expect(page).to have_link("Go to home page")
