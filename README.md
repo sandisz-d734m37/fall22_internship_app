@@ -18,7 +18,7 @@ Option 1, run with Heroku:
   
 <h6>Dearest Shopifolk: I truly attempted to deploy this application on Replit. Because I was not able to pull it off, I opted to create a gist to document everything I tried, then deploy to Heroku instead of simply sending out an un-deployed app.</h6>
 <h6>You can find my gist here: https://gist.github.com/sandisz-d734m37/b92ac17a199cb9a5a025f2cdc76e09ea (sorry it's a little wordy, I really wanted to include everything!)</h6>
-<h6>You can find my attempted replit here: https://replit.com/@sandisz-d734m37/fall22internshipapp</h6>
+<h6>You can find my attempted replit here: https://replit.com/@sandisz-d734m37/fall22internshipapp-3</h6>
   
 Option 2, clone and run locally:
  1. Clone this repo
